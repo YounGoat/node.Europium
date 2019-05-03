@@ -1,0 +1,7 @@
+{
+	"name": "europium",
+	"alias": ["einsteinium"],
+	"badges": [
+		"npm.*"
+	]
+}
