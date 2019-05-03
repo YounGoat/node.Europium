@@ -55,4 +55,4 @@ util === europium.util
 Here are available sub moduless:
 [view on single page](docs/all.md)
 
-*   europium.util
+*   [europium.util](docs/util.md)
