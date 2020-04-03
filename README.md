@@ -1,4 +1,4 @@
-#	europium
+#	`europium` or `fermium`
 __Something expected in next generation of Node.js__
 
 [![total downloads of europium](https://img.shields.io/npm/dt/europium.svg)](https://www.npmjs.com/package/europium)
@@ -8,6 +8,9 @@ __Something expected in next generation of Node.js__
 >	If links in this document not avaiable, please access [README on GitHub](./README.md) directly.
 
 The active LTS version (v10) of Node.js is named *Dubnium*, while the previous three are named *Carbon*, *Boron* and *Argon*. All of them are names of chemical elements. So I collect some features which I expect to be implemented in future, and name this module with *Europium*.
+
+-- UPDATE --  
+Unfortunately, Node.js v12 is already released and named *Erbium*. So, I decided to rename the package to *Fermium*.
 
 ##	ToC
 

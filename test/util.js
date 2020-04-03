@@ -101,5 +101,17 @@ describe('util', () => {
         });
     });
 
+    it('isAsyncFunction', () => {
+        let fn = null;
+        assert.equal(util.isAsyncFunction(fn), false);
 
+        fn = function() {};
+        assert.equal(util.isAsyncFunction(fn), false);
+
+        fn = async function() {};
+        assert.equal(util.isAsyncFunction(fn), true);
+
+        fn = async () => {};
+        assert.equal(util.isAsyncFunction(fn), true);
+    });
 });

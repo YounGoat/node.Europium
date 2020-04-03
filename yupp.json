@@ -1,6 +1,6 @@
 {
 	"name": "europium",
-	"alias": ["einsteinium"],
+	"alias": ["einsteinium", "fermium"],
 	"badges": [
 		"npm.*"
 	]

@@ -9,7 +9,7 @@
 
 ##	util.callbackable
 Added in: v0.0.1
-*	`original` *Function* 
+*	__original__ *Function* 
 *	Returns *Function*
 
 Takes an `async` function (or a normal function returning an instance of `Promise`), and return a new function. The new function will:
@@ -19,14 +19,14 @@ Takes an `async` function (or a normal function returning an instance of `Promis
 ```javascript
 const util = require('europium/util');
 
-async function sqaure(n) {
+async function square(n) {
 	if (typeof n != 'number') {
 		throw new Error('argument should be a number');
 	}
 	return n * n;
 }
 
-sqr = util.callbackable(sqaure);
+sqr = util.callbackable(square);
 
 // Returns an instance of `Promise`.
 sqr(2).then(sum => {
@@ -53,14 +53,14 @@ Similiar to `util.callbackable()`, but the returned function only follows the co
 ```javascript
 const util = require('europium/util');
 
-async function sqaure(n) {
+async function square(n) {
 	if (typeof n != 'number') {
 		throw new Error('argument should be a number');
 	}
 	return n * n;
 }
 
-sqr = util.callbackify(sqaure);
+sqr = util.callbackify(square);
 
 // Always returns void, 
 // whether or not the last `callback` argument is passed in.
@@ -70,6 +70,29 @@ sqr(2, function(err, sum) {
 ```
 
 As built-in [`util.promisify()`][^builtin.promisify] does, if there is an `origin[util.callbackify.custom]` property present, `callbackify` will return its value.
+
+##	util.isAsyncFunction
+Added in: v0.0.2
+*	fn	*any*
+*	Returns *boolean*
+
+```javascript
+const util = require('europium/util');
+
+async function foo() {
+	// ...
+}
+
+function bar() {
+	// ...
+}
+
+util.isAsyncFunction(foo);
+// Returns `true`.
+
+util.isAsyncFunction(bar);
+// Returns `false`.
+```
 
 ##	util.promisible
 Added in: v0.0.1
@@ -81,7 +104,7 @@ Similiar to `util.callbackable()`, but the `original` should follow the common e
 ```javascript
 const util = require('europium/util');
 
-function sqaure(n, callback) {
+function square(n, callback) {
 	if (typeof n != 'number') {
 		callback(new Error('argument should be a number'));
 	}
@@ -90,7 +113,7 @@ function sqaure(n, callback) {
 	}
 }
 
-sqr = util.promisible(sqaure);
+sqr = util.promisible(square);
 
 // Returns an instance of `Promise`.
 sqr(2).then(sum => {
