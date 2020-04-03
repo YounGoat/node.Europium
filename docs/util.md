@@ -4,6 +4,7 @@
 
 * [util.callbackable](#utilcallbackable)
 * [util.callbackify](#utilcallbackify)
+* [util.isAsyncFunction](#utilisasyncfunction)
 * [util.promisible](#utilpromisible)
 * [util.promisify](#utilpromisify)
 
